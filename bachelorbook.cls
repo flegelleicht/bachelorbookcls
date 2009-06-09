@@ -1,10 +1,9 @@
 %=============================================================================
-% Angepasste Vorlage von der AG Computervisualistik
+% Angepasste cgDA.cls-Vorlage von der AG Computervisualistik
 % URL: http://geri.uni-koblenz.de/Vorlagen/cgDA_Latex.zip
 % Seite: http://www.uni-koblenz.de/FB4/Institutes/ICV/AGMueller/DiplomaTheses
 % 
 % Angepasst von: Erik Hebisch (flegelleicht@gmail.com)
-%
 % Versionen ===========================
 % 2009-06-03	v0.6 Erik Hebisch
 %=============================================================================
@@ -46,7 +45,7 @@
 \RequirePackage[ngerman]{babel}
 
 % Einbindung von Grafiken
-\RequirePackage[pdftex,xdvi]{graphicx}
+\RequirePackage[pdftex]{graphicx}
 
 % Zitate
 \RequirePackage[square,numbers,sort]{natbib}
@@ -62,6 +61,9 @@
 
 % Übernahme der Unter-Abbildungen ins Inhaltsverzeichnis
 \setcounter{lofdepth}{2}
+
+% Verlinkungen von Inhaltverzeichnis und Verweisen sowie Urls
+\usepackage[pdftex,bookmarks=true,bookmarksopen=true,bookmarksnumbered=true,colorlinks=false,linkcolor=black,pdfborder={0 0 0}]{hyperref}
 
 \RequirePackage{units}
 \RequirePackage{array}
