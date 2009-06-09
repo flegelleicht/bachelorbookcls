@@ -32,7 +32,7 @@
 \ProcessOptions
 
 % LaTeX-Klasse "book" laden ==================================================
-\LoadClass[a4paper,titlepage,ngerman]{book}
+\LoadClass[a4paper,titlepage]{book}
 
 % Pakete laden ===============================================================
 % Eingabekodierung: Latin-9
