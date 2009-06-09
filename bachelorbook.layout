@@ -1,0 +1,17 @@
+#% Do not delete the line below; configure depends on this      
+#  \DeclareLaTeXClass[bachelorbook]{Bachelorarbeit}
+
+# Read the definitions from article.layout
+Input book.layout
+
+Style Erstgutachter
+  CopyStyle         Author
+  LatexName         erstgutachter
+  Align             Left
+End
+
+Style ErstgutachterInfo
+  CopyStyle Author
+  LatexName erstgutachterInfo
+  Align     Left
+End
