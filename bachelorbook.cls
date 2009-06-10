@@ -29,6 +29,7 @@
 \DeclareOption{oneside}{\PassOptionsToClass{oneside}{book}}
 \DeclareOption{12pt}{\PassOptionsToClass{12pt}{book}}
 \DeclareOption{11pt}{\PassOptionsToClass{11pt}{book}}
+\DeclareOption{draft}{\PassOptionsToClass{draft}{book}}
 \ProcessOptions
 
 % LaTeX-Klasse "book" laden ==================================================
@@ -36,16 +37,16 @@
 
 % Pakete laden ===============================================================
 % Eingabekodierung: Latin-9
-\RequirePackage[latin9]{inputenc}
+%\RequirePackage[latin9]{inputenc}
 
 % Schriftkodierung: T1 (für Ausgabe als Vektorschriften)
-\RequirePackage[T1]{fontenc}
+%\RequirePackage[T1]{fontenc}
 
 % Unterstuetzung englische und neue deutsche Rechtschreibung
 \RequirePackage[ngerman]{babel}
 
 % Einbindung von Grafiken
-\RequirePackage[pdftex]{graphicx}
+%\RequirePackage[pdftex]{graphicx}
 
 % Zitate
 \RequirePackage[square,numbers,sort]{natbib}
@@ -63,7 +64,7 @@
 \setcounter{lofdepth}{2}
 
 % Verlinkungen von Inhaltverzeichnis und Verweisen sowie Urls
-\usepackage[pdftex,bookmarks=true,bookmarksopen=true,bookmarksnumbered=true,colorlinks=false,linkcolor=black,pdfborder={0 0 0}]{hyperref}
+%\usepackage[pdftex,bookmarks=true,bookmarksopen=true,bookmarksnumbered=true,colorlinks=false,linkcolor=black,pdfborder={0 0 0}]{hyperref}
 
 \RequirePackage{units}
 \RequirePackage{array}
@@ -71,9 +72,12 @@
 
 % AMS -- Mathesymbole
 \RequirePackage{amsfonts}
-\RequirePackage{amssymb}
+%\RequirePackage{amssymb}
 \RequirePackage{amsmath}
 \RequirePackage{amsbsy}
+
+% Weitere Textsymbole
+%\RequirePackage{textcomp}
 
 %Zeilenabstand ändern
 \RequirePackage{setspace}
@@ -117,7 +121,7 @@
 }{}%
 
 % Noch besserer Blocksatz
-\RequirePackage{microtype}
+%\RequirePackage{microtype}
 
 % Neue Befehle ===============================================================
 \def\@erstgutachter{}
