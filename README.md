@@ -17,7 +17,7 @@ The files are encoded Latin-9 (mirroring the preset inputenc value in the .cls f
 
 Usage
 -----
-The class is straight forward to use because almost everything is required within the class file. There is not much left to "\usepackage". That also means, that you will have to change the class file if you disagree with some of the choices made.
+The class is straight forward to use because almost everything is required within the class file. There is not much left to "\usepackage". However that also means that you will have to change the class file if you disagree with some of the choices made.
 
 Example
 -------
