@@ -15,36 +15,29 @@
                    von Elke Hebisch]
 
 % Variablen ==================================================================
-%\RequirePackage{ifthen}
-%\newboolean{@isFemale}
-%\newboolean{@isTimes}
-%\newboolean{@isPalatino}
+\RequirePackage{ifthen}
+\newboolean{@isFemale}
+\newboolean{@isTimes}
+\newboolean{@isPalatino}
 
 % Optionen des Klasse ========================================================
-%\DeclareOption{w}{\setboolean{@isFemale}{true}}
-%\DeclareOption{m}{\setboolean{@isFemale}{false}}
-%\DeclareOption{times}{\setboolean{@isTimes}{true}}
-%\DeclareOption{palatino}{\setboolean{@isPalatino}{true}}
-%\DeclareOption{twoside}{\PassOptionsToClass{twoside}{book}}
-%\DeclareOption{oneside}{\PassOptionsToClass{oneside}{book}}
-%\DeclareOption{12pt}{\PassOptionsToClass{12pt}{book}}
-%\DeclareOption{11pt}{\PassOptionsToClass{11pt}{book}}
-%\DeclareOption{draft}{\PassOptionsToClass{draft}{book}}
-%\ProcessOptions
+\DeclareOption{w}{\setboolean{@isFemale}{true}}
+\DeclareOption{m}{\setboolean{@isFemale}{false}}
+\DeclareOption{times}{\setboolean{@isTimes}{true}}
+\DeclareOption{palatino}{\setboolean{@isPalatino}{true}}
+\DeclareOption{twoside}{\PassOptionsToClass{twoside}{book}}
+\DeclareOption{oneside}{\PassOptionsToClass{oneside}{book}}
+\DeclareOption{12pt}{\PassOptionsToClass{12pt}{book}}
+\DeclareOption{11pt}{\PassOptionsToClass{11pt}{book}}
+\DeclareOption{draft}{\PassOptionsToClass{draft}{book}}
+\ProcessOptions
 
 % LaTeX-Klasse "book" laden ==================================================
-\LoadClass[ %draft,
-			a4paper,
-			normalheadings,
-			headsepline,
-			liststotoc,bibtotoc,idxtotoc,
-			%noonelinecaption,
-			ngerman,
-			12pt]{scrbook}
+\LoadClass[a4paper,ngerman,12pt,oneside]{book}
 
 % Pakete laden ===============================================================
 % Eingabekodierung: Latin-9
-\RequirePackage[latin1]{inputenc}
+%\RequirePackage[latin1]{inputenc}
 
 % Schriftkodierung: T1 (für Ausgabe als Vektorschriften)
 %\RequirePackage[T1]{fontenc}
@@ -91,37 +84,37 @@
 % \baselineskip15pt
         
 % Kopf- und Fußzeilen
-%\RequirePackage{fancyhdr}
-%\fancyhf{}
+\RequirePackage{fancyhdr}
+\fancyhf{}
 % Einstellung von Kopf- und Fußzeilen
-%\ifthenelse{\boolean{@twoside}}{%
-%	% Zweiseitiger Druck
-%	\fancypagestyle{plain}{\fancyhf{}\fancyhead[LE,RO]{\thepage}}%
-%  \fancyhead[RE]{\leftmark}%
-%	\fancyhead[LO]{\rightmark}%
-%	\fancyhead[LE,RO]{\thepage}%\scshape \leftmark}
-%}{
-%	% Einseitiger Druck
-%	\fancypagestyle{plain}{\fancyhf{}\fancyhead[RO]{\thepage}}%
-%	\fancyhead[LO]{\rightmark}%
-%	\fancyhead[RO]{\thepage}%\scshape \leftmark}
-%}
-%% Festlegung des Seitenstils auf "fancy"
-%\pagestyle{fancy}
-%% Dicke der Trennlinie der Kopfzeile festlegen
-%\renewcommand{\headrulewidth}{0.5pt}
-%% Platz für Kopfzeile definieren (muss > 14.6 pt sein)
-%\setlength{\headheight}{15pt}
+\ifthenelse{\boolean{@twoside}}{%
+	% Zweiseitiger Druck
+	\fancypagestyle{plain}{\fancyhf{}\fancyhead[LE,RO]{\thepage}}%
+  \fancyhead[RE]{\leftmark}%
+	\fancyhead[LO]{\rightmark}%
+	\fancyhead[LE,RO]{\thepage}%\scshape \leftmark}
+}{
+	% Einseitiger Druck
+	\fancypagestyle{plain}{\fancyhf{}\fancyhead[RO]{\thepage}}%
+	\fancyhead[LO]{\rightmark}%
+	\fancyhead[RO]{\thepage}%\scshape \leftmark}
+}
+% Festlegung des Seitenstils auf "fancy"
+\pagestyle{fancy}
+% Dicke der Trennlinie der Kopfzeile festlegen
+\renewcommand{\headrulewidth}{0.5pt}
+% Platz für Kopfzeile definieren (muss > 14.6 pt sein)
+\setlength{\headheight}{15pt}
 
-%% Schriftarten (Standard: Computer Modern)
-%\ifthenelse{\boolean{@isTimes}}{%
-%	% Schriftart Times New Roman
-%	\RequirePackage{times}%
-%}{}%
-%\ifthenelse{\boolean{@isPalatino}}{%
-%	% Schriftart Book Antiqua/Palatino
-%	\RequirePackage{mathpazo}%
-%}{}%
+% Schriftarten (Standard: Computer Modern)
+\ifthenelse{\boolean{@isTimes}}{%
+	% Schriftart Times New Roman
+	\RequirePackage{times}%
+}{}%
+\ifthenelse{\boolean{@isPalatino}}{%
+	% Schriftart Book Antiqua/Palatino
+	\RequirePackage{mathpazo}%
+}{}%
 
 % Noch besserer Blocksatz
 %\RequirePackage{microtype}
@@ -142,11 +135,12 @@
 
 
 % Formatierung ===============================================================
-\typearea[14mm]{15}
-\setcapindent{0.0em}
-\addtokomafont{caption}{\footnotesize\sffamily}
-\addtokomafont{captionlabel}{\footnotesize\sffamily\bfseries}
-\addtokomafont{pagehead}{\sffamily\mdseries}
+\RequirePackage[DIV15,BCOR14mm]{typearea}
+%\typearea[14mm]{15}
+%\setcapindent{0.0em}
+%\addtokomafont{caption}{\footnotesize\sffamily}
+%\addtokomafont{captionlabel}{\footnotesize\sffamily\bfseries}
+%\addtokomafont{pagehead}{\sffamily\mdseries}
 % Keine Einrückung bei Absätzen
 \setlength{\parindent}{0.0em}
 % Größerer Abstand zwischen Absätzen
@@ -185,13 +179,37 @@
 
 % Neue Titelseite ============================================================
 \renewcommand{\maketitle}{
-  \begin{titlepage}
+		\thispagestyle{empty}
 		\ifthenelse{\boolean{@twoside}}{%
 			\setcounter{page}{0}
-	  }{%
+		}{%
 			\setcounter{page}{-1}
-	  }
-    \vspace*{\stretch{1}}
+		}
+		\vspace*{\stretch{1}}
+		{\parindent0cm\rule{\linewidth}{.5ex}}
+		\begin{center}
+		 	\vspace*{\stretch{0.5}}
+		 	\sffamily\bfseries\LARGE\@title\\
+		 	\vspace*{\stretch{1}}
+		 	\sffamily\bfseries\large\@author
+			\vspace*{\stretch{0.5}}
+		\end{center}
+		\rule{\linewidth}{.5ex}
+		\vspace*{\stretch{5}}
+		\begin{center}
+			%includegraphics{UniLogo}
+		\end{center}
+		\vspace*{\stretch{1}}
+		\begin{center}
+			\sffamily\large M{\"u}nchen 2009
+		\end{center}
+		\newpage
+		\thispagestyle{empty}
+		\mbox{}
+		\cleardoublepage
+		%
+		\thispagestyle{empty}
+		\vspace*{\stretch{1}}
     {\parindent0cm\rule{\linewidth}{.5ex}}
     \begin{center}
     	\vspace*{\stretch{0.5}}
@@ -201,36 +219,6 @@
     	\vspace*{\stretch{0.5}}
     \end{center}
     \rule{\linewidth}{.5ex}
-    \vspace*{\stretch{5}}
-    \begin{center}
-    	%includegraphics{UniLogo}
-    \end{center}
-    \vspace*{\stretch{1}}
-    \begin{center}
-    	\sffamily\large M{\"u}nchen 2009
-    \end{center}
-   \end{titlepage}
-
-   % Rueckseite der Titelseite
-   \ifthenelse{\boolean{@twoside}}{%
-      \begin{titlepage}
-         \setcounter{page}{0}
-         \mbox{}   % Hier muss was stehen, also eine leere Box :-)
-      \end{titlepage}
-   }{}
-   
-	\begin{titlepage}
-		    \vspace*{\stretch{1}}
-    {\parindent0cm\rule{\linewidth}{.5ex}}
-    \begin{center}
-    	\vspace*{\stretch{0.5}}
-    	\sffamily\bfseries\LARGE\@title\\
-    	\vspace*{\stretch{1}}
-    	\sffamily\bfseries\large\@author
-    	\vspace*{\stretch{0.5}}
-    \end{center}
-    \rule{\linewidth}{.5ex}
-
 		\vspace*{\stretch{3}}
 		\begin{center}
 			\sffamily\large Bachelorarbeit\\
@@ -244,20 +232,18 @@
 			\vspace*{\stretch{2}}
 			München, den \@date
 		\end{center}
-  \end{titlepage}
-
-	\begin{titlepage}
+		\newpage
+		%
+		\thispagestyle{empty}
 		\vspace*{\stretch{1}}
 		\begin{flushleft}
 			\sffamily\large Erstgutachter:\\[1mm]
 			Zweitgutachter:
 		\end{flushleft}
-	\end{titlepage}
-	
-	% Erklärung
-	\begin{titlepage}
-		\noindent
-		\Large{Erkl{\"a}rung}\\
+		\cleardoublepage
+		% Erklärung
+		\thispagestyle{empty}
+		\noindent\Large{Erkl{\"a}rung}\\
 	
 		\vspace*{2ex}
 		\noindent
@@ -271,5 +257,5 @@
 		\dotfill \\
 		{\small(Ort, Datum)}\hfill{\small (Unterschrift)}
 		\normalsize
-	\end{titlepage}
+		\cleardoublepage
 }
